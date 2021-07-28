@@ -1,19 +1,3 @@
-DROP TABLE IF EXISTS users;
-
-CREATE TABLE users (
-	id SERIAL PRIMARY KEY,
-	username VARCHAR(50)
-);
-
-INSERT INTO users (username)
-VALUES
-	('monahan93'),
-    ('pferrer'),
-	('si93onis'),
-	('99stroman');
-
-DROP TABLE IF EXISTS photos;
-    
 CREATE TABLE photos (
     id SERIAL PRIMARY KEY,
     url VARCHAR(200),
