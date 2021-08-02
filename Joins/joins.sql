@@ -22,3 +22,8 @@ FROM photos
 -- LEFT JOIN users on users.id = photos.user_id;
 -- RIGHT JOIN users on users.id = photos.user_id;
 FULL JOIN users on users.id = photos.user_id;
+
+SELECT url, contents
+FROM comments
+JOIN photos ON photos.id = comments.photo_id
+WHERE comments.user_id = photos.user_id;
