@@ -10,4 +10,5 @@ ORDER BY name DESC;
 
 SELECT *
 FROM products
-ORDER BY price, weight;
+-- ORDER BY price, weight;
+ORDER BY price, weight DESC;
