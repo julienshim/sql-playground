@@ -5,3 +5,10 @@ WHERE p1.price = ( -- p1. is being explicit
     FROM products AS p2
     WHERE p2.department = p1.department
 );
+
+SELECT name, (
+	SELECT COUNT(*)
+	FROM orders as o1
+	WHERE o1.product_id = p1.id
+)
+FROM products AS p1;
