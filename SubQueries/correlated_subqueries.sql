@@ -6,7 +6,7 @@ WHERE p1.price = ( -- p1. is being explicit
     WHERE p2.department = p1.department
 );
 
-SELECT name, (
+SELECT p1.name, ( -- p1.name to eliminate ambiguity
 	SELECT COUNT(*)
 	FROM orders as o1
 	WHERE o1.product_id = p1.id
