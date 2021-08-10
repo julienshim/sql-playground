@@ -33,3 +33,11 @@ WHERE price > ALL (
 -- 	FROM products
 -- 	WHERE department = 'Industrial'
 -- );
+
+SELECT name, department, price
+FROM products
+WHERE price > ANY (
+	SELECT price
+	FROM products
+	WHERE department = 'Industrial'
+);
