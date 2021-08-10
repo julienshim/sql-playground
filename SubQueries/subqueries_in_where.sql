@@ -36,7 +36,7 @@ WHERE price > ALL (
 
 SELECT name, department, price
 FROM products
-WHERE price > ANY (
+WHERE price > SOME (
 	SELECT price
 	FROM products
 	WHERE department = 'Industrial'
