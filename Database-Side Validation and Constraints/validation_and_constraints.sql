@@ -35,3 +35,11 @@ SET DEFAULT 999;
 
 INSERT INTO products (name, department, weight)
 VALUES ('Gloves', 'Tools', 1);
+
+-- unique constraints one column
+
+ALTER TABLE products
+ADD UNIQUE (name); -- name in parenthese / all values have to be unique
+
+INSERT INTO products (name, department, price, weight)
+VALUES ('Shirt', 'Tools', 24, 1);
