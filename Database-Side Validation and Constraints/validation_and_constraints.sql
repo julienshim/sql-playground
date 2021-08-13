@@ -60,3 +60,11 @@ VALUES ('Shirt', 'Clothes', 24, 1); -- error
 
 ALTER TABLE products
 DROP CONSTRAINT products_name_department_key;
+
+-- validation check
+
+ALTER TABLE products 
+ADD CHECK (price > 0);
+
+INSERT INTO products (name, department, price, weight)
+VALUES ('Belt', 'Clothes', -99, 1); -- error
