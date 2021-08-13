@@ -43,3 +43,20 @@ ADD UNIQUE (name); -- name in parenthese / all values have to be unique
 
 INSERT INTO products (name, department, price, weight)
 VALUES ('Shirt', 'Tools', 24, 1);
+
+-- unique constraints multicolumn
+
+ALTER TABLE products 
+DROP CONSTRAINT products_name_key;
+
+ALTER TABLE products 
+ADD UNIQUE (name, department);
+
+INSERT INTO products (name, department, price, weight)
+VALUES ('Shirt', 'Housewares', 24, 1); -- successful / different department
+
+INSERT INTO products (name, department, price, weight)
+VALUES ('Shirt', 'Clothes', 24, 1); -- error
+
+ALTER TABLE products
+DROP CONSTRAINT products_name_department_key;
