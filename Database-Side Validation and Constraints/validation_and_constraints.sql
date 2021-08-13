@@ -69,7 +69,7 @@ ADD CHECK (price > 0);
 INSERT INTO products (name, department, price, weight)
 VALUES ('Belt', 'Clothes', -99, 1); -- error
 
--- validation multiple columns
+-- validation multiple columns (per row)
 
 CREATE TABLE orders (
 	id SERIAL PRIMARY KEY,
