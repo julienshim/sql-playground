@@ -1,3 +1,5 @@
+-- null constriants
+
 CREATE TABLE products (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(40),
@@ -24,3 +26,12 @@ SET NOT NULL;
 
 INSERT INTO products (name, department, weight) -- error
 VALUES ('Shoes', 'Clothes', 5);
+
+-- default value
+
+ALTER TABLE products 
+ALTER COLUMN price
+SET DEFAULT 999;
+
+INSERT INTO products (name, department, weight)
+VALUES ('Gloves', 'Tools', 1);
