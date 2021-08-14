@@ -22,3 +22,18 @@ SELECT url
 FROM likes
 JOIN users.id = likes.post_id
 WHERE likes.user_id = 4;
+
+-- coalesce
+SELECT COALESCE(NULL, 5); -- 5
+SELECT COALESCE(10, 5); -- 10
+SELECT COALESCE((4)::BOOLEAN::INTEGER, 0) -- 1 (4 is valid)
+SELECT COALESCE((NULL)::BOOLEAN::INTEGER, 0) -- 0
+SELECT(NULL)::BOOLEAN::INTEGER -- null -- null
+SELECT(534)::BOOLEAN::INTEGER -- true -- 1
+
+Add CHECK of
+(
+    COALESCE((post_id)::BOOLEAN::INTEGER, 0)
+    +
+    COALESCE((comment_id)::BOOLEAN::INTEGER, 0)
+) = 1
