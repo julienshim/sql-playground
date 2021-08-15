@@ -15,11 +15,11 @@ TABLE posts {
   id SERIAL [pk, increment]
   created_at TIMESTAMP
   updated_at TIMESTAMP
-  url VARCAR(200)
-  user_id INTEGER [ref: > users.id]
+  url VARCHAR(200)
   caption VARCHAR(240)
   lat REAL
   lng REAL
+  user_id INTEGER [ref: > users.id]
 }
 
 TABLE comments {
@@ -45,15 +45,15 @@ TABLE photo_tags {
   updated_at TIMESTAMP
   post_id INTEGER [ref: > posts.id]
   user_id INTEGER [ref: > users.id]
-  x INTEGRER
-  y INTEGRER
+  x INTEGER
+  y INTEGER
 }
 
 TABLE caption_tags {
   id SERIAL [pk, increment]
   created_at TIMESTAMP
   user_id INTEGER [ref: > users.id]
-  comment_id INTEGRER [ref: > comments.id]
+  comment_id INTEGER [ref: > comments.id]
 }
 
 Table hashtags {
