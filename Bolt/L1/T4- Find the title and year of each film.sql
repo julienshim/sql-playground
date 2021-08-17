@@ -1,1 +1,2 @@
-SELECT title, year FROM movies;
+SELECT title, year
+FROM movies;

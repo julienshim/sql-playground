@@ -1,1 +1,2 @@
-SELECT director FROM movies;
+SELECT director
+FROM movies;
