@@ -1,5 +1,0 @@
-SELECT *
-FROM movies
-ORDER BY title
-LIMIT 5
-OFFSET 5;

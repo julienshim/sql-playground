@@ -1,2 +1,0 @@
-SELECT director
-FROM movies;
