@@ -1,0 +1,1 @@
+SELECT name, manufacturer FROM phones where manufacturer IN ('Apple', 'Samsung');
