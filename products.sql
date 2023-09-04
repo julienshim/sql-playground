@@ -31,3 +31,9 @@ SELECT * -- 5 most exp
 FROM products
 ORDER BY price DESC
 LIMIT 5;
+
+SELECT * -- 5 most exp after the most exp
+FROM products
+ORDER BY price DESC
+LIMIT 5
+OFFSET 1;
