@@ -37,3 +37,23 @@ FROM products
 ORDER BY price DESC
 LIMIT 5
 OFFSET 1;
+
+(
+    SELECT *
+    FROM products
+    ORDER BY price DESC
+    LIMIT 4
+)
+UNION -- ALL
+(
+    SELECT *
+    FROM products
+    ORDER BY price / weight DESC
+    LIMIT 4
+);
+
+SELECT * -- same columns
+FROM products
+UNION
+SELECT * -- same columns
+FROM products;
