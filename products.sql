@@ -57,3 +57,17 @@ FROM products
 UNION
 SELECT * -- same columns
 FROM products;
+
+(
+    SELECT *
+    FROM products
+    ORDER BY price DESC
+    LIMIT 4
+)
+    INTERSECT -- find common item(s); remove duplicates -- ALL if multiple times in top section or bottom section
+(
+    SELECT *
+    FROM products
+    ORDER BY price / weight DESC
+    LIMIT 4
+);
