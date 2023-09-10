@@ -85,3 +85,15 @@ EXCEPT -- find items not in latter inquiry
     ORDER BY price / weight DESC
     LIMIT 4
 );
+
+SELECT name, price
+FROM products
+WHERE price > 876; -- not dynamic
+
+SELECT name, price
+FROM products
+WHERE price > ( -- subquery
+    SELECT MAX(price)
+    FROM products
+    WHERE department = 'Toys'
+);
