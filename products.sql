@@ -97,3 +97,17 @@ WHERE price > ( -- subquery
     FROM products
     WHERE department = 'Toys'
 );
+
+SELECT name, price, (
+    SELECT MAX(price) from products -- select subquery results in a single value
+)
+FROM products
+WHERE price > 876;
+
+SELECT name, price, (
+    SELECT price
+    FROM products
+    WHERE id = 3 -- returns an assumed single value
+) AS id_3_price -- differenciate 'price'
+FROM products
+WHERE price > 876;
