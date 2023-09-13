@@ -111,3 +111,23 @@ SELECT name, price, (
 ) AS id_3_price -- differenciate 'price'
 FROM products
 WHERE price > 876;
+
+SELECT name, price_weight_ratio
+FROM (
+  SELECT name, price / weight AS price_weight_ratio
+  FROM products
+) AS p -- subquery in FROM must have alias
+WHERE price_weight_ratio > 5;
+
+SELECT *
+FROM (
+	SELECT MAX(price)
+  FROM products
+) as p;
+
+SELECT AVG(order_count)
+FROM (
+  SELECT user_id, COUNT(*) AS order_count -- integer
+  FROM orders
+  GROUP BY user_id
+) AS p;
