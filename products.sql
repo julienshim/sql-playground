@@ -131,3 +131,18 @@ FROM (
   FROM orders
   GROUP BY user_id
 ) AS p;
+
+SELECT first_name
+FROM users
+JOIN ( -- contrived example
+  SELECT user_id
+	FROM orders
+	WHERE product_id = 3
+) AS o
+ON o.user_id = users.id;
+
+SELECT first_name
+FROM users
+JOIN orders -- exact same result as above
+ON orders.user_id = users.id
+WHERE orders.product_id = 3;
